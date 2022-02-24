@@ -1,0 +1,27 @@
+<h2 #homeTitle></h2>
+<div class="card p-4">
+  <label for="name" class="form-input">Name</label>
+  <input
+    id="name"
+    type="text"
+    class="form-control"
+    #childName
+    placeholder="alien4949"
+  />
+  <label for="email" class="form-input mt-2">Email</label>
+  <input
+    id="email"
+    type="email"
+    class="form-control"
+    #childEmail
+    [placeholder]="placeholder"
+  />
+  <button
+    (click)="submitValue(childName, childEmail)"
+    class="btn btn-primary mt-3"
+  >
+    Submit
+  </button>
+</div>
+
+<app-child-home [MyEmail]="arr"></app-child-home>

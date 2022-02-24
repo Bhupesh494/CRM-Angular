@@ -1,0 +1,14 @@
+<header class="navbar">
+  <div class="dum">
+    <a href="#" class="logo">BrandLOGO</a>
+    <mat-icon (click)="closefun(nav)" class="but">menu</mat-icon>
+  </div>
+
+  <nav class="nav none" #nav>
+    <ul>
+      <li><a routerLink="/angular.json">Home</a></li>
+      <li><a routerLink="/posts">Posts</a></li>
+      <li><a routerLink="/login">Login</a></li>
+    </ul>
+  </nav>
+</header>

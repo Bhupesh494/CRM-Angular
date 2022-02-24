@@ -1,0 +1,15 @@
+<div class="card m-4 p-3">
+  <h2>{{ childTitle }}</h2>
+  <div class="column">
+    <label for="title" class="form-label">Add Custom Title</label>
+    <input id="title" [(ngModel)]="childTitle" class="form-control" />
+  </div>
+  <div class="card m-3 p-3" *ngIf="isChildVisible">
+    <p>Name: {{ MyEmail.nchild }}</p>
+    <p>Email: {{ MyEmail.echild }}</p>
+  </div>
+  <div class="row" *ngIf="isComponentExit">
+    <span class="alert alert-info">{{ today }} </span>
+  </div>
+  <button class="btn btn-success" (click)="delete()">Toggle Timer</button>
+</div>
