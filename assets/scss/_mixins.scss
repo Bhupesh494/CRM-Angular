@@ -1,0 +1,13 @@
+@import "./variables";
+
+@mixin button {
+  border-radius: $btn-border-radius;
+  height: $btn-height;
+  width: $btn-width;
+  padding: 24px 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  font-weight: 300;
+}
