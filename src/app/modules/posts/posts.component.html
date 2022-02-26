@@ -1,1 +1,28 @@
 <p>posts works!</p>
+<div class="card p-3">
+  <div class="card p-2">
+    <input
+      type="number"
+      class="form-control my-2"
+      #num1
+      placeholder="Number 1"
+    />
+    <input
+      type="number"
+      class="form-control my-2"
+      #num2
+      placeholder="Number 2"
+    />
+    <button
+      class="btn btn-success my-2"
+      (click)="add(+num1.value, +num2.value)"
+    >
+      Submit
+    </button>
+  </div>
+  <h2 class="text-center m-3 text-success border-bottom">{{ sum }}</h2>
+</div>
+<div *ngFor="let user of users" class="alert alert-success text-center">
+  <div class="alert alert-danger">{{ user.userId }}</div>
+  <div class="alert alert-warning">{{ user.username }}</div>
+</div>

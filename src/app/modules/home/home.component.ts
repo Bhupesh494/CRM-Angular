@@ -18,16 +18,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor() {}
 
   @ViewChild('homeTitle') homeTitle!: ElementRef;
-  names: any;
+
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    console.log(this.homeTitle.nativeElement.innerHTML);
     this.homeTitle.nativeElement.innerHTML = 'Home Component';
-
     this.childHome.isChildVisible = true;
-    console.log(this.childHome.today);
-    this.names = setInterval(() => {
+    setInterval(() => {
       this.childHome.today = new Date();
     }, 1000);
   }
@@ -38,10 +35,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   };
   placeholder = 'Enter Name';
 
-  submitValue(childName: any, childEmail: any) {
+  submitValue(childName: HTMLInputElement, childEmail: HTMLInputElement) {
     this.arr.nchild = childName.value;
     this.arr.echild = childEmail.value;
   }
 
-  ngOnDestroy() {}
+  greet(name: string) {
+    alert('Hello ' + name);
+  }
 }

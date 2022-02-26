@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-child-home',
@@ -9,6 +9,8 @@ export class ChildHomeComponent implements OnInit {
   // @Input() MyValue = '';
   @Input() MyEmail: any;
 
+  @Output() greetEvent = new EventEmitter();
+  pname = 'Rajesh';
   constructor() {}
   today: Date = new Date();
   childTitle = 'ChildHome Component';
@@ -20,5 +22,9 @@ export class ChildHomeComponent implements OnInit {
 
   delete() {
     this.isComponentExit = !this.isComponentExit;
+  }
+
+  callParentGreet() {
+    this.greetEvent.emit(this.pname);
   }
 }
